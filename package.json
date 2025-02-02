@@ -1,0 +1,26 @@
+{
+  "name": "mobile-automation-webdriverio",
+  "version": "1.0.0",
+  "description": "Projeto de automação mobile com WebDriverIO, Appium e Cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio wdio.conf.js",
+    "test:android": "npx cross-env PLATFORM=android wdio wdio.conf.js",
+    "test:ios": "npx cross-env PLATFORM=ios wdio wdio.conf.js",
+    "report": "allure generate allure-results --clean && allure open"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "^7.3.1",
+    "@wdio/allure-reporter": "^9.6.3",
+    "@wdio/appium-service": "^9.6.3",
+    "@wdio/cli": "^9.6.3",
+    "@wdio/cucumber-framework": "^9.6.3",
+    "chai": "^4.3.7"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^9.7.2",
+    "@wdio/spec-reporter": "^9.6.3",
+    "allure-commandline": "^2.24.0",
+    "cross-env": "^7.0.3"
+  }
+}
