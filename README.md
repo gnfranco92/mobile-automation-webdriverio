@@ -42,12 +42,12 @@ app/
 
 ### 🔹 **Executar os testes no emulador Android**
 ```sh
-npm test
+npm run test:android
 ```
 
 ### 🔹 **Executar os testes no iOS (macOS obrigatório)**
 ```sh
-npm run test-ios
+npm run test:ios
 ```
 
 ### 🔹 **Executar os testes no BrowserStack (opcional)**
@@ -80,7 +80,8 @@ npm run report
 E abra o relatório no navegador:
 
 ```sh
-allure open allure-report
+allure generate
+allure open
 ```
 
 ## 🔄 CI/CD com GitHub Actions
