@@ -1,10 +1,14 @@
 class LoginPage {
     
-    get userEmailInput() { return $('//android.widget.EditText[@content-desc="input-email"]'); }
-    get passwordInput() { return $('//android.widget.EditText[@content-desc="input-password"]'); }
-    get loginSubmit() { return $('//android.view.ViewGroup[@content-desc="button-LOGIN"]/android.view.ViewGroup'); }
-    get loginButton() { return $('//android.view.View[@content-desc="Login"]'); }
-    get successMessage() { return $('//android.widget.TextView[@text="Success"]'); }
+    get userEmailInput() { return $('//android.widget.EditText[@content-desc="input-email"]');}
+    get passwordInput() { return $('//android.widget.EditText[@content-desc="input-password"]');}
+    get loginSubmit() { return $('//android.view.ViewGroup[@content-desc="button-LOGIN"]');}
+    get loginButton() { return $('//android.view.View[@content-desc="Login"]');}
+    get confirmButton() { return $('//android.widget.Button[@resource-id="android:id/button1"]');}
+    get successMessage() { return $('//android.widget.TextView[@text="Success"]');}
+    get errorMessageEmail() { return $('//android.widget.TextView[contains(@text, "Please enter a valid email address")]'); }
+
+
 
     async tapLoginButton() {
         await this.loginButton.waitForDisplayed();
@@ -25,7 +29,13 @@ class LoginPage {
 
     async isLoggedIn() {
         await this.successMessage.waitForDisplayed({ timeout: 5000 });
-        return this.successMessage.isDisplayed();
+        await this.confirmButton.click();
+        return this.loginSubmit.isDisplayed();
+    }
+
+    async isLoginErrorEmail() {
+        await this.errorMessageEmail.waitForDisplayed({ timeout: 5000 });
+        return this.errorMessageEmail.isDisplayed();
     }
 }
 

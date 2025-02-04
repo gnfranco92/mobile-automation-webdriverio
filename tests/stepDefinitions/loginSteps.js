@@ -14,6 +14,11 @@ When('clica no botão de login', async () => {
     await LoginPage.submit();
 });
 
-Then('ele deve ser redirecionado para o dashboard', async () => {
+Then('o login deve ser feito com sucesso', async () => {
     expect(await LoginPage.isLoggedIn()).to.be.true;
+});
+
+Then('o login deve falhar devido ao e-mail invalido', async () => {
+    expect(await LoginPage.isLoginErrorEmail()).to.be.true;
+
 });
