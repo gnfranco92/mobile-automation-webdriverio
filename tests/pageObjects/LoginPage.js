@@ -9,7 +9,8 @@ class LoginPage {
     get successMessage() { return $('//android.widget.TextView[@text="Success"]');}
 
     // Mensagem de erro
-    get errorMessageEmail() { return $('//android.widget.TextView[contains(@text, "Please enter a valid email address")]'); }
+    get errorMessageEmail() { return $('//android.widget.TextView[contains(@text, "Please enter a valid email address")]');}
+    get errorMessagePassword() { return $('//android.widget.TextView[@text, "Please enter at least 8 characters"]');}
 
 
 
@@ -39,6 +40,11 @@ class LoginPage {
     async isLoginErrorEmail() {
         await this.errorMessageEmail.waitForDisplayed({ timeout: 5000 });
         return this.errorMessageEmail.isDisplayed();
+    }
+
+    async isLoginErrorPassword() {
+        await this.errorMessagePassword.waitForDisplayed({ timeout: 5000 });
+        return this.errorMessagePassword.isDisplayed();
     }
 }
 

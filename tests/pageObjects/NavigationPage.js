@@ -1,19 +1,19 @@
 class NavigationPage {
     
     // Bottom bar
-    get webviewButton() { return $('//android.view.View[@content-desc="Webview"]'); }
-    get loginButton() { return $('//android.view.View[@content-desc="Login"]'); }
-    get formsButton() { return $('//android.view.View[@content-desc="Forms"]'); }
-    get swipeButton() { return $('//android.view.View[@content-desc="Swipe"]'); }
-    get dragButton() { return $('//android.view.View[@content-desc="Drag"]'); }
+    get webviewButton() { return $('//android.view.View[@content-desc="Webview"]');}
+    get loginButton() { return $('//android.view.View[@content-desc="Login"]');}
+    get formsButton() { return $('//android.view.View[@content-desc="Forms"]');}
+    get swipeButton() { return $('//android.view.View[@content-desc="Swipe"]');}
+    get dragButton() { return $('//android.view.View[@content-desc="Drag"]');}
 
     // Elementos de cada tela
     get homeScreen() { return $('//android.widget.ScrollView[@content-desc="Home-screen"]');}
     get webviewScreen() { return $('//android.view.View[@content-desc="WebdriverIO"]');}
-    get loginScreen() { return $('//android.widget.ScrollView[@content-desc="Login-screen"]'); }
-    get formsScreen() { return $('//android.widget.ScrollView[@content-desc="Forms-screen"]'); }
-    get swipeScreen() { return $('//android.widget.ScrollView[@content-desc="Swipe-screen"]'); }
-    get dragScreen() { return $('//android.view.ViewGroup[@content-desc="Drag-drop-screen"]'); }
+    get loginScreen() { return $('//android.widget.ScrollView[@content-desc="Login-screen"]');}
+    get formsScreen() { return $('//android.widget.ScrollView[@content-desc="Forms-screen"]');}
+    get swipeScreen() { return $('//android.widget.ScrollView[@content-desc="Swipe-screen"]');}
+    get dragScreen() { return $('//android.view.ViewGroup[@content-desc="Drag-drop-screen"]');}
 
     async navigateTo(screenName) {
         if (screenName.toLowerCase() === 'home') {

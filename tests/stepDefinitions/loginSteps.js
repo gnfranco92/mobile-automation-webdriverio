@@ -20,5 +20,8 @@ Then('o login deve ser feito com sucesso', async () => {
 
 Then('o login deve falhar devido ao e-mail invalido', async () => {
     expect(await LoginPage.isLoginErrorEmail()).to.be.true;
+});
 
+Then('o login deve falhar devido não ter inserido a senha', async () => {
+    expect(await LoginPage.isLoginErrorPassword()).to.be.true;
 });
